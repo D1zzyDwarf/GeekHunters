@@ -6,10 +6,20 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="GeekHunter.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\SkillDTO.cs" />
+  </ItemGroup>
 </Project>
