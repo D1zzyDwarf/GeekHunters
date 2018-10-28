@@ -1,0 +1,13 @@
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunter.sqlite
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunters.test.deps.json
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunters.test.dll
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunters.test.pdb
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunters.dll
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\bin\Debug\netcoreapp2.1\GeekHunters.pdb
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.csprojAssemblyReference.cache
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.csproj.CoreCompileInputs.cache
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.AssemblyInfoInputs.cache
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.AssemblyInfo.cs
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.csproj.CopyComplete
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.dll
+C:\Users\kaisu\Desktop\GeekHunters\GeekHunters.test\obj\Debug\netcoreapp2.1\GeekHunters.test.pdb

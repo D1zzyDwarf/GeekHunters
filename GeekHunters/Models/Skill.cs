@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 namespace GeekHunters.Models
 {
     public class Skill

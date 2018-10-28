@@ -1,9 +1,12 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekHunters", "GeekHunters\GeekHunters.csproj", "{8C32E4E2-E532-4431-B7B0-BCAE9EDDC874}"
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekHunters", "GeekHunters\GeekHunters.csproj", "{8C32E4E2-E532-4431-B7B0-BCAE9EDDC874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekHunters.test", "GeekHunters.test\GeekHunters.test.csproj", "{7CE9250F-9B0C-431B-BE68-0824D13B622F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekHunters.test", "GeekHunters.test\GeekHunters.test.csproj", "{7CE9250F-9B0C-431B-BE68-0824D13B622F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekHunters.UI", "GeekHunters.UI\GeekHunters.UI.csproj", "{CDC41852-0962-438F-9110-3F874DA7F37B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +22,15 @@ Global
 		{7CE9250F-9B0C-431B-BE68-0824D13B622F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CE9250F-9B0C-431B-BE68-0824D13B622F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CE9250F-9B0C-431B-BE68-0824D13B622F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC41852-0962-438F-9110-3F874DA7F37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC41852-0962-438F-9110-3F874DA7F37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC41852-0962-438F-9110-3F874DA7F37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC41852-0962-438F-9110-3F874DA7F37B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8C5FAA7-910D-4077-A211-D828043C9B9E}
 	EndGlobalSection
 EndGlobal

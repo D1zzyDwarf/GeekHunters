@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace GeekHunters.Models
 {
     public class CandidateSkill

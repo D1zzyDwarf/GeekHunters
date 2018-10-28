@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+
 namespace GeekHunters.Models
 {
     public class CandidateContext : DbContext
@@ -29,7 +30,7 @@ namespace GeekHunters.Models
                 Candidate
                     .Include(c => c.CandidateSkills)
                     .ThenInclude(cs => cs.Skill)
-                    .Where(c => skills.All(s => c.CandidateSkills.Select(cs => cs.Skill.Name).ToList().Contains(s)))
+                    .Where(c => skills.All(s => c.CandidateSkills.Select(cs => cs.Skill.Name).Contains(s)))
                     .ToList();
             return fulfilledCandidates;
         }
@@ -43,5 +44,6 @@ namespace GeekHunters.Models
                     .ToList();
             return candidates;
         }
+
     }
 }

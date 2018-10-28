@@ -1,0 +1,1 @@
+{"version":3,"file":"tabs.js","sourceRoot":"","sources":["../../../src/components/layouts/tabs.tsx"],"names":[],"mappings":";;AAAA,+BAA+B;AAE/B,SAAyB,SAAQ,KAAK,CAAC,SAAS;IAC5C,MAAM;QACF,OAAO,CACH,6BAAK,SAAS,EAAC,cAAc;YACzB,6BAAK,SAAS,EAAC,aAAa,kbAEvB;YACL,6BAAK,SAAS,EAAC,aAAa,sZAEtB;YACN,6BAAK,SAAS,EAAC,aAAa,q1BAEtB,CACJ,CACT,CAAC;IACN,CAAC;CACJ;AAhBD,sBAgBC"}

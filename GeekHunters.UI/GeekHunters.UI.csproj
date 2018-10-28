@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="config.ts" />
+    <None Remove="src\app.tsx" />
+    <None Remove="src\components\candidate-registration-form.tsx" />
+    <None Remove="src\components\candidate-table.tsx" />
+    <None Remove="src\components\tabs.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="config.ts" />
+    <TypeScriptCompile Include="src\app.tsx" />
+    <TypeScriptCompile Include="src\components\candidate-registration-form.tsx" />
+    <TypeScriptCompile Include="src\components\candidate-table.tsx" />
+    <TypeScriptCompile Include="src\components\geek-hunters-tabs.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\build\" />
+  </ItemGroup>
+
+</Project>

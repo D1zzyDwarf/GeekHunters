@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using GeekHunters.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace GeekHunters.Controllers
 {
@@ -11,8 +11,10 @@ namespace GeekHunters.Controllers
     public class CandidatesController : ControllerBase
     {
         [HttpGet]
+        [EnableCors("DefaultPolicy")]
         public ActionResult<IEnumerable<CandidateDTO>> Get([FromQuery]string[] skills)
         {
+            skills = skills.Select(s => System.Uri.UnescapeDataString(s)).ToArray();
             List<CandidateDTO> candidates;
             using (var db = new CandidateContext()) {
                 if (skills.Length == 0) {
@@ -31,12 +33,13 @@ namespace GeekHunters.Controllers
         }
 
         [HttpPost]
+        [EnableCors("DefaultPolicy")]
         public void Post([FromBody] CandidateDTO candidate)
         {
             using (var db = new CandidateContext())
             {
                 var skills = new List<Skill>();
-                candidate.Skills.ToList().ForEach(x => skills.Add(db.Skill.SingleOrDefault(skill => skill.Name == x)));
+                candidate.Skills?.ToList().ForEach(x => skills.Add(db.Skill.SingleOrDefault(skill => skill.Name == x)));
 
                 Candidate newCandidate = new Candidate();
                 newCandidate.FirstName = candidate.FirstName;
