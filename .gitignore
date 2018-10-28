@@ -1,4 +1,7 @@
-GeekHunters.UI/node_modules/
+.vs/
 GeekHunters/obj/
 GeekHunters/bin/
-.vs/
+GeekHunters.UI/node_modules/
+GeekHunters.UI/dist/
+GeekHunters.UI/obj/
+GeekHunters.UI/bin/
