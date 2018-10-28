@@ -1,4 +1,5 @@
-﻿var path = require("path");
+﻿/// <binding AfterBuild='Run - Development' />
+var path = require("path");
 
 var config = {
     entry: ["./src/app.tsx"],

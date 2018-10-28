@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  <Target Name="BeforeBuild">
-    <Exec Command="npm run build" />
-  </Target>
-  
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,10 +24,19 @@
     <TypeScriptCompile Include="src\components\candidate-registration-form.tsx" />
     <TypeScriptCompile Include="src\components\candidate-table.tsx" />
     <TypeScriptCompile Include="src\components\geek-hunters-tabs.tsx" />
-  </ItemGroup>
-
+  </ItemGroup> 
+  
   <ItemGroup>
+    <Folder Include="dist\" />
     <Folder Include="wwwroot\build\" />
-  </ItemGroup>
+  </ItemGroup> 
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="webpack" />
+  </Target> 
+  
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm install" />
+  </Target>
 
 </Project>
