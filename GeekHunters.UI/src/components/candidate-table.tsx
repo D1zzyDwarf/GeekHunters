@@ -77,7 +77,7 @@ export class CandidateTable extends React.Component<IComponentProps, ICandidateT
 
     render() {
         if (!this.state.candidates) {
-            return <div className="container">loading</div>;
+            return <div className="container">loading...</div>;
         }
         return (
             <div className="container">

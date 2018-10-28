@@ -15,7 +15,7 @@ namespace GeekHunters.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Data Source={System.AppContext.BaseDirectory}/GeekHunter.sqlite");
+            optionsBuilder.UseSqlite($"Data Source={AppContext.BaseDirectory}/GeekHunter.sqlite");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {

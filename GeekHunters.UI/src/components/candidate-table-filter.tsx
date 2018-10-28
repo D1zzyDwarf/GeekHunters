@@ -3,7 +3,7 @@ import { MouseEvent } from "react";
 import { config } from "../../config";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-interface IComponentProps {
+interface ICandidateTableFilterProps {
     skillList: string[];
     selectedSkills: string[];
     onSkillsChange: Function;
@@ -13,11 +13,11 @@ interface ICandidateTableFilterState {
     selectedSkills: string[],
 }
 
-export class CandidateTableFilter extends React.Component<IComponentProps, ICandidateTableFilterState> {
+export class CandidateTableFilter extends React.Component<ICandidateTableFilterProps, ICandidateTableFilterState> {
 
     onSkillsChange: Function;
 
-    constructor(props: IComponentProps) {
+    constructor(props: ICandidateTableFilterProps) {
         super(props);
         this.state = {
             selectedSkills: props.selectedSkills,
@@ -38,9 +38,6 @@ export class CandidateTableFilter extends React.Component<IComponentProps, ICand
                 newSelected.splice(this.state.selectedSkills.indexOf("All"), 1);
             }
             newSelected.push(button);
-            if (this.props.skillList.length === newSelected.length) {
-                newSelected = ["All"]
-            }
         }
         this.setState({ selectedSkills: newSelected });
         this.onSkillsChange(newSelected);

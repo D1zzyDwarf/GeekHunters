@@ -1,21 +1,21 @@
 ﻿import * as React from "react";
+import { ChangeEvent } from "react";
 import { config } from "../../config";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ChangeEvent } from "react";
 
-interface IComponentProps {
-    skillList: Array<string>;
+interface ICandidateRegistrationFormProps {
+    skillList: string[];
 }
 
-interface IComponentState {
+interface ICandidateRegistrationFormState {
     candidateFirstName: string;
     candidateLastName: string;
-    candidateSkills: Array<string>;
+    candidateSkills: string[];
 
 }
 
-export class CandidateRegistrationForm extends React.Component<IComponentProps, IComponentState> {
-    constructor(props: IComponentProps) {
+export class CandidateRegistrationForm extends React.Component<ICandidateRegistrationFormProps, ICandidateRegistrationFormState> {
+    constructor(props: ICandidateRegistrationFormProps) {
         super(props);
         this.state = {
             candidateFirstName: null,

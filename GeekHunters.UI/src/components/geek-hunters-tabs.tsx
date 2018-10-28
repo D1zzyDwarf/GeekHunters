@@ -5,11 +5,11 @@ import { CandidateTable } from "./candidate-table";
 import { config } from "../../config";
 import 'react-tabs/style/react-tabs.css';
 
-interface IComponentState {
+interface IGeekHuntersTabsState {
     skillList: string[];
 }
 
-export default class GeekHuntersTabs extends React.Component<any, IComponentState> {
+export default class GeekHuntersTabs extends React.Component<any, IGeekHuntersTabsState> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -32,7 +32,7 @@ export default class GeekHuntersTabs extends React.Component<any, IComponentStat
 
     render() {
         if (!this.state.skillList) {
-            return <div>loading</div>
+            return <div>loading...</div>
         }
         return (
             <Tabs>

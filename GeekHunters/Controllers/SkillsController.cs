@@ -3,6 +3,7 @@ using GeekHunters.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Cors;
+using System;
 
 namespace GeekHunters.Controllers
 {
@@ -14,12 +15,21 @@ namespace GeekHunters.Controllers
         [EnableCors("DefaultPolicy")]
         public ActionResult<IEnumerable<string>> Get()
         {
-            List<string> skills;
-            using (var db = new CandidateContext())
+            try
             {
-                skills = db.Skill.Select(s => s.Name).ToList();
+                List<string> skills;
+                using (var db = new CandidateContext())
+                {
+                    skills = db.Skill.Select(s => s.Name).ToList();
+                }
+                return skills;
             }
-            return skills;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return StatusCode(500);
+            }
+            
         }
     }
 }

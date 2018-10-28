@@ -23,7 +23,7 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "tsc"
   },
   "author": "Kai Sun"
 }
