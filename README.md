@@ -1,25 +1,35 @@
 # Geek Hunters
 
-You are working at IT-recruiting agency "Geek Hunters". Your employer asked you to implement Geek Registration System
-(GRS). 
+This application has 2 main components
+  - REST API with:
+     - ASP.NET Core 2.1
+	 - ORM (EF Core)
+  - Web Frontend:
+	 - ReactJS
 
-Using GRS a recruitment agent should be able to:
-  - register a new candidate:
-     - first name / last name
-     - select technologies candidate has experience in from the predefined list 
-  - view all candidates
-  - filter candidates by technology
+Unit test is VERY important. But given that I have 4 interviews within 1 week, the application does not have any unit tests implemented :(
 
-Another developer has partially designed and implemented a
-SQLite DB for this project - GeekHunters.sqlite. Feel free to modify a structure to
-your needs.
+The REST API provides the following contracts:
+  - Retrieve all candidates
+  - Retrieve candidates by skills
+	 - Retrieve candidate(s) with conjunction skills (SQL and C#)
+	 - Retrieve candidate(s) who has one of the skill sets (SQL or C#)
+  - Create a new candidate
+  - Retrieve all skills
+  
+The Web Frontend has the following features:
+  - View all candidates
+  - View candidates by skills 
+  - Register a new candidate: 
+	 - First name and last name are mandatory
+	 - Skill is optional
+Some features that are good to have but haven't been implemented yet: Pagination, Sorting, View candidates with conjunction of skills (customizable filters).
 
-Please fork the project and commit your source code (please do not archive it :) ).
+The SQLite database wasn't changed much - a CandidateSkill table was created to represent the relationship between candidates and skills. However, the ID type of Candidate and Skill tables are better with BIGINT.
 
-You are free to use **ANY** .net web frameworks you need - aspnet / webapi / spa etc. However, if you decide to go with third
-party package manager or dev tool - don't forget to mention them in the
-README.md of your fork.
+Requisites to run the application:
+  - .NET Core 2.1 Runtime
+  - NPM
+The Web Frontend has pre-build and post-build events configured. So if you are using VS 2017, you are able to get the app running easily.
 
-Good luck!
-
-P.S: And unit tests! We love unit tests!
+Cheers
