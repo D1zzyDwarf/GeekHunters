@@ -25,7 +25,6 @@ export class CandidateTable extends React.Component<IComponentProps, ICandidateT
             candidates: null
         };
 
-        props.skillList.unshift("All");
         this.onSkillsChange = this.onSkillsChange.bind(this);
     }
 

@@ -38,7 +38,7 @@ export class CandidateTableFilter extends React.Component<IComponentProps, ICand
                 newSelected.splice(this.state.selectedSkills.indexOf("All"), 1);
             }
             newSelected.push(button);
-            if (this.props.skillList.length === newSelected.length + 1) {
+            if (this.props.skillList.length === newSelected.length) {
                 newSelected = ["All"]
             }
         }
@@ -49,6 +49,7 @@ export class CandidateTableFilter extends React.Component<IComponentProps, ICand
     render() {
         return (
             <div style={{ padding: 10 }} className="btn-group">
+                <span style={{ padding: 10 }}><button className={this.state.selectedSkills.indexOf("All") != -1 ? "btn btn-primary filter-button" : "btn btn-default filter-button"} value="All" onClick={e => this.onButtonClick(e)}>All</button></span>
                 {this.props.skillList.map(skill => <span style={{ padding: 10 }}><button className={this.state.selectedSkills.indexOf(skill) != -1 ? "btn btn-primary filter-button" : "btn btn-default filter-button"} value={skill} onClick={e => this.onButtonClick(e)}>{skill}</button></span>)}
             </div>
         );

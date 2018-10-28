@@ -15,21 +15,27 @@ namespace GeekHunters.Controllers
         public ActionResult<IEnumerable<CandidateDTO>> Get([FromQuery]string[] skills)
         {
             skills = skills.Select(s => System.Uri.UnescapeDataString(s)).ToArray();
-            List<CandidateDTO> candidates;
+            List<Candidate> candidates;
             using (var db = new CandidateContext()) {
                 if (skills.Length == 0) {
-                    candidates = db.GetAllCandidatesWithSkills().Select(c => new CandidateDTO(c)).ToList();
+                    candidates = db.GetAllCandidatesWithSkills().ToList();
                 } else {
-                    candidates = new List<CandidateDTO>();
+                    candidates = new List<Candidate>();
                     var parsedSkills = skills.Select(x => x.Trim().Split(","));
                     foreach (string[] skillParams in parsedSkills)
                     {
                         var fulfilledCandidates = db.GetCandidatesBySkills(skillParams);
-                        fulfilledCandidates.ForEach(c => candidates.Add(new CandidateDTO(c)));
+                        fulfilledCandidates.ForEach(c => {
+                            if (!candidates.Any(addedCandidate => c.Id == addedCandidate.Id))
+                            {
+                                candidates.Add(c);
+                            }
+                            
+                        });
                     }
                 }
             }
-            return candidates;
+            return candidates.Select(c => new CandidateDTO(c)).ToList();
         }
 
         [HttpPost]
