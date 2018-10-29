@@ -30,9 +30,12 @@ export class CandidateTableFilter extends React.Component<ICandidateTableFilterP
         let button = (event.target as any).value;
         let newSelected = this.state.selectedSkills;
         if(button === "All") {
-            newSelected = ["All"]
+            newSelected = ["All"];
         } else if (newSelected.indexOf(button) != -1) {
             newSelected.splice(this.state.selectedSkills.indexOf(button), 1);
+            if (newSelected.length == 0) {
+                newSelected = ["All"];
+            }
         } else {
             if (newSelected.indexOf("All") != -1) {
                 newSelected.splice(this.state.selectedSkills.indexOf("All"), 1);
