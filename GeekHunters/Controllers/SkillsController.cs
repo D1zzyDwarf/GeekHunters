@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using GeekHunters.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Cors;
 using System;
+using GeekHunters.Repositories;
 
 namespace GeekHunters.Controllers
 {
@@ -11,18 +11,20 @@ namespace GeekHunters.Controllers
     [ApiController]
     public class SkillsController : ControllerBase
     {
+        public ISkillRepository _skillRepository;
+
+        public SkillsController(ISkillRepository skillRepository)
+        {
+            _skillRepository = skillRepository;
+        }
+
         [HttpGet]
         [EnableCors("DefaultPolicy")]
         public ActionResult<IEnumerable<string>> Get()
         {
             try
             {
-                List<string> skills;
-                using (var db = new CandidateContext())
-                {
-                    skills = db.Skill.Select(s => s.Name).ToList();
-                }
-                return skills;
+                return _skillRepository.GetAllSkills().Select(skill => skill.Name).ToList();
             }
             catch (Exception ex)
             {

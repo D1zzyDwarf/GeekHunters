@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using GeekHunters.Dal;
+using GeekHunters.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +17,6 @@ namespace GeekHunters
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -27,9 +28,12 @@ namespace GeekHunters
                        .AllowCredentials()
                        .AllowAnyHeader();
             }));
+
+            services.AddDbContext<SQLiteContext>();
+            services.AddScoped<ICandidateRepository, CandidateRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

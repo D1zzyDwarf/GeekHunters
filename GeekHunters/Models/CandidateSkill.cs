@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GeekHunters.Models
+﻿namespace GeekHunters.Models
 {
     public class CandidateSkill
     {

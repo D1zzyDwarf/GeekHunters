@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
+using GeekHunters.Models;
 
-namespace GeekHunters.Models
+namespace GeekHunters.Dal
 {
-    public class CandidateContext : DbContext
+    public class SQLiteContext : DbContext
     {
         public DbSet<Candidate> Candidate { get; set; }
 
@@ -24,26 +23,5 @@ namespace GeekHunters.Models
             modelBuilder.Entity<CandidateSkill>().HasOne(cs => cs.Candidate).WithMany(c => c.CandidateSkills).HasForeignKey(cs => cs.CandidateId);
             modelBuilder.Entity<CandidateSkill>().HasOne(cs => cs.Skill).WithMany(s => s.CandidateSkills).HasForeignKey(cs => cs.SkillId);
         }
-
-        public List<Candidate> GetCandidatesBySkills(string[] skills) {
-            var fulfilledCandidates =
-                Candidate
-                    .Include(c => c.CandidateSkills)
-                    .ThenInclude(cs => cs.Skill)
-                    .Where(c => skills.All(s => c.CandidateSkills.Select(cs => cs.Skill.Name).Contains(s)))
-                    .ToList();
-            return fulfilledCandidates;
-        }
-
-        public List<Candidate> GetAllCandidatesWithSkills()
-        {
-            var candidates =
-                Candidate
-                    .Include(c => c.CandidateSkills)
-                    .ThenInclude(cs => cs.Skill)
-                    .ToList();
-            return candidates;
-        }
-
     }
 }
